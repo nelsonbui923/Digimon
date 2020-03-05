@@ -317,9 +317,9 @@ function currentId() {
         }
     }
 };
-
-function reloadPage() {
-    location.reload();
+let forceGet = true;
+function reloadPage(forceGet) {
+    location.reload(forceGet);
 }
 
 submitBtn.addEventListener('click', processSurvey);
