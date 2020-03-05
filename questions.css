@@ -208,10 +208,16 @@ button[type=button]:hover {
   button[type=submit] {
     width: 30%;
   }
+  button[type=button] {
+    width: 30%;
+  }
 }
 
 @media (max-width: 500px) {
   button[type=submit] {
+    width: 40%;
+  }
+  button[type=button] {
     width: 40%;
   }
 }
