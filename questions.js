@@ -5,6 +5,7 @@ const digimonSection = document.querySelector('.digimon');
 const resultSection = document.querySelector('.result');
 const questionContainer = document.querySelector('.question-container');
 const instructions = document.querySelector('.instructions');
+const refreshBtn = document.querySelector('.refresh-btn');
 
 let Survey = {
     courage: {
@@ -149,6 +150,7 @@ function showResult() {
     questionContainer.style.display = "none";
     submitBtn.style.display = "none";
     document.body.style.height = "100vh";
+    refreshBtn.style.display = "flex";
 
 }
 
@@ -279,7 +281,7 @@ function getDigimon() {
             showResult();
         }
     } else if(finalResult.length < 10) {
-        p.textContent = 'Did you answer every question? Please refresh the page to try again.';
+        p.textContent = 'Did you answer every question?';
         digimonSection.appendChild(p);
         instructions.textContent = "Something went wrong!"
 
@@ -316,5 +318,9 @@ function currentId() {
     }
 };
 
+function reloadPage() {
+    location.reload();
+}
 
 submitBtn.addEventListener('click', processSurvey);
+refreshBtn.addEventListener('click', reloadPage);
